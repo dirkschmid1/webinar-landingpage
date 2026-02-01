@@ -124,76 +124,62 @@ export default function LandingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Webseiten-Paket */}
+            {/* Basispaket - LEFT/TOP */}
             <div className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 card-hover">
-              <h3 className="text-2xl font-bold mb-2">Webseiten-Paket</h3>
-              <p className="text-gray-400 mb-6">Deine Premium-Website für planbare Kundengewinnung</p>
+              <h3 className="text-2xl font-bold mb-2">Basispaket</h3>
+              <p className="text-gray-400 mb-6">Dein solides digitales Fundament</p>
               
-              <div className="bg-zinc-900/50 rounded-xl p-4 mb-4">
-                <span className="text-4xl font-bold">300€</span>
+              <div className="bg-zinc-900/50 rounded-xl p-4 mb-6">
+                <span className="text-4xl font-bold">197€</span>
                 <span className="text-gray-400 ml-2">/Monat</span>
-                <p className="text-gray-500 text-sm mt-1">12 Monate Laufzeit</p>
-              </div>
-              <div className="text-center text-gray-500 text-sm mb-4">– oder –</div>
-              <div className="bg-zinc-900/50 rounded-xl p-4 mb-6 border border-green-500/30">
-                <span className="text-4xl font-bold text-green-400">3.000€</span>
-                <span className="text-gray-400 ml-2">einmalig</span>
-                <p className="text-green-400 text-sm font-semibold mt-1">💰 2 Monate gespart!</p>
               </div>
               
               <ul className="space-y-3">
                 {[
-                  { text: "5 Seiten – individuell gestaltet", highlight: true },
-                  { text: "Conversion-optimierte Texte", highlight: false },
-                  { text: "Professionelle Bildintegration", highlight: false },
-                  { text: "SEO-Grundoptimierung", highlight: false },
-                  { text: "Mobile-optimiert (Responsive)", highlight: false },
-                  { text: "Hosting & Verwaltung inklusive", highlight: true },
-                  { text: "Listing-Paket inklusive", highlight: true }
+                  { text: "Listing-Paket inklusive", highlight: true },
+                  { text: "Hosting + Verwaltung", highlight: true },
+                  { text: "Lizenzen inklusive", highlight: true }
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className={`w-5 h-5 flex-shrink-0 ${item.highlight ? 'text-green-500' : 'text-green-500'}`} />
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                     <span className={item.highlight ? 'font-semibold' : ''}>{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Premium-Paket */}
+            {/* Premium-Paket - RIGHT/BOTTOM */}
             <div className="bg-gradient-to-b from-orange-500/20 to-zinc-800 border-2 border-orange-500 rounded-2xl p-8 relative card-hover">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-black text-xs font-bold px-4 py-1 rounded-full">
                 EMPFOHLEN
               </div>
               <h3 className="text-2xl font-bold mb-2">Premium-Paket</h3>
-              <p className="text-gray-400 mb-6">Webseite + Google Ads = Kundenmaschine</p>
+              <p className="text-gray-400 mb-6">Basispaket + Kundenmaschine</p>
               
               <div className="bg-zinc-900/50 rounded-xl p-4 mb-6">
-                <span className="text-4xl font-bold text-orange-500">597€</span>
-                <span className="text-gray-400 ml-2">/Monat</span>
-                <p className="text-gray-500 text-sm mt-1">Alles inklusive</p>
+                <span className="text-4xl font-bold text-orange-500">Auf Anfrage</span>
               </div>
+              
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                  <span className="font-semibold">Alles aus dem Basispaket</span>
+                </li>
+              </ul>
               
               <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4 mb-6">
-                <p className="text-orange-400 font-bold text-sm mb-1">🎯 Das Highlight:</p>
-                <p className="text-white font-semibold text-lg">Google Ads Betreuung</p>
-                <p className="text-gray-400 text-sm">Bis zu 3 Kampagnen, professionell optimiert</p>
-              </div>
-              
-              <ul className="space-y-3">
-                {[
-                  "Alles aus dem Webseiten-Paket",
-                  "Google Ads Setup & Betreuung",
-                  "Bis zu 3 Werbekampagnen",
-                  "CRM-System mit WhatsApp",
-                  "Monatliche Optimierung",
-                  "Performance-Reports"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                    <span className={i === 0 ? 'font-semibold' : ''}>{item}</span>
+                <p className="text-orange-400 font-bold text-sm mb-2">🚀 Zusätzlich:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <span className="text-orange-500 font-bold">+</span>
+                    <span className="text-white font-semibold">Google Ads Betreuung</span>
                   </li>
-                ))}
-              </ul>
+                  <li className="flex items-center gap-3">
+                    <span className="text-orange-500 font-bold">+</span>
+                    <span className="text-white font-semibold">CRM-System inkl. WhatsApp-Integration</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
