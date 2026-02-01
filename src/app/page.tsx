@@ -156,7 +156,7 @@ export default function LandingPage() {
             {/* Basispaket */}
             <div className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 card-hover">
               <h3 className="text-2xl font-bold mb-2">Basispaket</h3>
-              <p className="text-gray-400 mb-6">Hosting & Grundausstattung</p>
+              <p className="text-gray-400 mb-6">Hosting, CRM & Grundausstattung</p>
               
               <div className="bg-zinc-900/50 rounded-xl p-4 mb-6">
                 <span className="text-4xl font-bold">197€</span>
@@ -166,8 +166,10 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 {[
                   { text: "Hosting + technische Wartung", highlight: true },
-                  { text: "Listing-Paket (Branchenbücher)", highlight: true },
-                  { text: "Lizenzen inklusive", highlight: true }
+                  { text: "CRM-System (HighLevel)", highlight: true },
+                  { text: "WhatsApp-Funktion integriert", highlight: true },
+                  { text: "Listing-Paket (Branchenbücher)", highlight: false },
+                  { text: "Lizenzen inklusive", highlight: false }
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -183,7 +185,7 @@ export default function LandingPage() {
                 EMPFOHLEN
               </div>
               <h3 className="text-2xl font-bold mb-2">Premium-Paket</h3>
-              <p className="text-gray-400 mb-6">Basispaket + Kundenmaschine</p>
+              <p className="text-gray-400 mb-6">Basispaket + Google Ads</p>
               
               <div className="bg-zinc-900/50 rounded-xl p-4 mb-6">
                 <span className="text-4xl font-bold text-orange-500">597€</span>
@@ -191,10 +193,16 @@ export default function LandingPage() {
               </div>
               
               <ul className="space-y-3 mb-4">
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span className="font-semibold">Alles aus dem Basispaket</span>
-                </li>
+                {[
+                  { text: "Alles aus dem Basispaket" },
+                  { text: "Hosting + CRM + WhatsApp" },
+                  { text: "Listing-Paket + Lizenzen" }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                    <span className="font-semibold">{item.text}</span>
+                  </li>
+                ))}
               </ul>
               
               <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4">
@@ -203,10 +211,6 @@ export default function LandingPage() {
                   <li className="flex items-center gap-3">
                     <span className="text-orange-500 font-bold">+</span>
                     <span className="text-white font-semibold">Google Ads Betreuung (max. 3 Kampagnen)</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-orange-500 font-bold">+</span>
-                    <span className="text-white font-semibold">CRM-System inkl. WhatsApp-Funktion</span>
                   </li>
                 </ul>
               </div>
