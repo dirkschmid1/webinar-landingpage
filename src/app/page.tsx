@@ -22,7 +22,7 @@ export default function LandingPage() {
             href="#angebot"
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all glow"
           >
-            Jetzt Angebot ansehen <ArrowRight className="w-5 h-5" />
+            Jetzt Angebot beanspruchen <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </section>
@@ -120,71 +120,80 @@ export default function LandingPage() {
             Dein Investment
           </h2>
           <p className="text-gray-400 text-center mb-12 text-lg">
-            Wähle das Modell, das zu dir passt – einmalig oder monatlich.
+            Wähle das Modell, das zu dir passt.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Einmalig */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Webseiten-Paket */}
             <div className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 card-hover">
-              <h3 className="text-2xl font-bold mb-2">Website Einmalzahlung</h3>
-              <p className="text-gray-400 mb-6">Professionelle, conversion-optimierte Website</p>
-              <div className="mb-6">
-                <span className="text-5xl font-bold">3.000€</span>
-                <span className="text-gray-400 ml-2">einmalig</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                {["Individuelles Design", "Mobile-optimiert", "SEO-Grundlagen", "Kontaktformular", "3 Revisionsrunden"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Monatlich */}
-            <div className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 card-hover">
-              <h3 className="text-2xl font-bold mb-2">Website Monatsmodell</h3>
-              <p className="text-gray-400 mb-6">Keine hohe Anfangsinvestition nötig</p>
-              <div className="mb-6">
-                <span className="text-5xl font-bold">300€</span>
+              <h3 className="text-2xl font-bold mb-2">Webseiten-Paket</h3>
+              <p className="text-gray-400 mb-6">Deine Premium-Website für planbare Kundengewinnung</p>
+              
+              <div className="bg-zinc-900/50 rounded-xl p-4 mb-4">
+                <span className="text-4xl font-bold">300€</span>
                 <span className="text-gray-400 ml-2">/Monat</span>
+                <p className="text-gray-500 text-sm mt-1">12 Monate Laufzeit</p>
               </div>
-              <ul className="space-y-3 mb-8">
-                {["Alle Einmalzahlung-Features", "12 Monate Laufzeit", "Danach deine Website", "Monatliche Updates", "Priority Support"].map((item, i) => (
+              <div className="text-center text-gray-500 text-sm mb-4">– oder –</div>
+              <div className="bg-zinc-900/50 rounded-xl p-4 mb-6 border border-green-500/30">
+                <span className="text-4xl font-bold text-green-400">3.000€</span>
+                <span className="text-gray-400 ml-2">einmalig</span>
+                <p className="text-green-400 text-sm font-semibold mt-1">💰 2 Monate gespart!</p>
+              </div>
+              
+              <ul className="space-y-3">
+                {[
+                  { text: "5 Seiten – individuell gestaltet", highlight: true },
+                  { text: "Conversion-optimierte Texte", highlight: false },
+                  { text: "Professionelle Bildintegration", highlight: false },
+                  { text: "SEO-Grundoptimierung", highlight: false },
+                  { text: "Mobile-optimiert (Responsive)", highlight: false },
+                  { text: "Hosting & Verwaltung inklusive", highlight: true },
+                  { text: "Listing-Paket inklusive", highlight: true }
+                ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>{item}</span>
+                    <CheckCircle className={`w-5 h-5 flex-shrink-0 ${item.highlight ? 'text-green-500' : 'text-green-500'}`} />
+                    <span className={item.highlight ? 'font-semibold' : ''}>{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
 
-          {/* Add-Ons */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Hosting & Verwaltung</h4>
-              <p className="text-gray-400 mb-4">Hosting, technische Wartung, Content-Pflege</p>
-              <div>
-                <span className="text-3xl font-bold text-orange-500">197€</span>
-                <span className="text-gray-400">/Monat</span>
+            {/* Premium-Paket */}
+            <div className="bg-gradient-to-b from-orange-500/20 to-zinc-800 border-2 border-orange-500 rounded-2xl p-8 relative card-hover">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-black text-xs font-bold px-4 py-1 rounded-full">
+                EMPFOHLEN
               </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/50 rounded-xl p-6 glow">
-              <div className="flex items-center gap-2 mb-2">
-                <Star className="w-5 h-5 text-orange-500" />
-                <span className="text-orange-500 font-semibold">PREMIUM PAKET</span>
+              <h3 className="text-2xl font-bold mb-2">Premium-Paket</h3>
+              <p className="text-gray-400 mb-6">Webseite + Google Ads = Kundenmaschine</p>
+              
+              <div className="bg-zinc-900/50 rounded-xl p-4 mb-6">
+                <span className="text-4xl font-bold text-orange-500">597€</span>
+                <span className="text-gray-400 ml-2">/Monat</span>
+                <p className="text-gray-500 text-sm mt-1">Alles inklusive</p>
               </div>
-              <h4 className="text-xl font-bold mb-2">All-Inclusive</h4>
-              <p className="text-gray-400 mb-4">
-                Website + Hosting + Google Business + Branchenbücher + CMS
-              </p>
-              <div>
-                <span className="text-3xl font-bold text-orange-500">597€</span>
-                <span className="text-gray-400">/Monat</span>
+              
+              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4 mb-6">
+                <p className="text-orange-400 font-bold text-sm mb-1">🎯 Das Highlight:</p>
+                <p className="text-white font-semibold text-lg">Google Ads Betreuung</p>
+                <p className="text-gray-400 text-sm">Bis zu 3 Kampagnen, professionell optimiert</p>
               </div>
+              
+              <ul className="space-y-3">
+                {[
+                  "Alles aus dem Webseiten-Paket",
+                  "Google Ads Setup & Betreuung",
+                  "Bis zu 3 Werbekampagnen",
+                  "CRM-System mit WhatsApp",
+                  "Monatliche Optimierung",
+                  "Performance-Reports"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                    <span className={i === 0 ? 'font-semibold' : ''}>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -277,13 +286,13 @@ export default function LandingPage() {
             Lass uns sprechen. Unverbindlich und kostenlos.
           </p>
           <a
-            href="https://webinar.motormarketing.de/"
+            href="https://calendly.com/upscaled-media/15min"
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all glow"
           >
-            Jetzt zum Webinar anmelden <ArrowRight className="w-5 h-5" />
+            Jetzt Angebot beanspruchen <ArrowRight className="w-5 h-5" />
           </a>
           <p className="text-gray-500 mt-4 text-sm">
-            Im Webinar erklären wir alles im Detail – live und mit Q&A
+            Kostenloses 15-Min-Gespräch – unverbindlich
           </p>
         </div>
       </section>
